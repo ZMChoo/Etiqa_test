@@ -33,8 +33,7 @@ class _TodoListDetailScreenState extends State<TodoListDetailScreen> {
     super.initState();
     if (widget.todoDetail != null) {
       labelController.text = widget.todoDetail.title;
-      startDate = widget.todoDetail
-          .startDate;
+      startDate = widget.todoDetail.startDate;
       endDate = widget.todoDetail.estimateEndDate;
     }
   }
@@ -162,9 +161,14 @@ class _TodoListDetailScreenState extends State<TodoListDetailScreen> {
         initialDate: isStartDate
             ? startDate ?? DateTime.now()
             : endDate != null
-                ? endDate
-                : startDate ?? DateTime.now(),
-        firstDate: dateFrom ?? DateTime.now(),
+                ? DateTime(endDate.year, endDate.month, endDate.day + 1)
+                : startDate != null
+                    ? DateTime(
+                        startDate.year, startDate.month, startDate.day + 1)
+                    : DateTime.now(),
+        firstDate: dateFrom != null
+            ? DateTime(dateFrom.year, dateFrom.month, dateFrom.day + 1)
+            : DateTime.now(),
         lastDate: DateTime(2121),
         builder: (BuildContext context, Widget child) {
           return Theme(
@@ -180,7 +184,7 @@ class _TodoListDetailScreenState extends State<TodoListDetailScreen> {
         setState(() {
           startDate = dateTime;
         });
-        if (startDate.compareTo(endDate) > 0) {
+        if (startDate.compareTo(endDate) >= 0) {
           setState(() {
             endDate = null;
           });

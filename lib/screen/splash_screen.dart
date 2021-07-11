@@ -35,7 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
           width: MediaQuery.of(context).size.width,
           alignment: Alignment.center,
           child: Text(
-            "Etiqa Flutter Test",
+            "Flutter Notes",
             style:
                 theme.textTheme.headline5.copyWith(fontWeight: FontWeight.bold),
           ),

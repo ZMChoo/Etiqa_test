@@ -15,4 +15,4 @@ You can download the sdk version from this [link](https://flutter.dev/docs/devel
 - Delete your existing To-Do card 
 - Can change your To-Do card status when done
 
-You can delete your exisiting To-Do card by long pressing on the card.
+You can delete your existing To-Do card by long pressing on the card.
