@@ -1,5 +1,6 @@
 import 'package:etiqa_test/component/my_appbar.dart';
 import 'package:etiqa_test/component/router.dart';
+import 'package:etiqa_test/component/todo_card.dart';
 import 'package:etiqa_test/model/todoModel.dart';
 import 'package:etiqa_test/viewModel/todo_view_model.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +84,27 @@ class _TodoListScreenState extends State<TodoListScreen> {
                               );
                             }
 
-                            return Container();
+                            return SingleChildScrollView(
+                              physics: BouncingScrollPhysics(),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 20, vertical: 20),
+                              child: Column(
+                                children: todoList
+                                    .asMap()
+                                    .map((index, todo) {
+                                      return MapEntry(
+                                          index,
+                                          Container(
+                                            margin: EdgeInsets.only(bottom: index == todoList.length - 1 ? 80 : 20),
+                                            child: TodoCard(
+                                              myTodo: todo,
+                                            ),
+                                          ));
+                                    })
+                                    .values
+                                    .toList(),
+                              ),
+                            );
                           });
                     },
                   ),
