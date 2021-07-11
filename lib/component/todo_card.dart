@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:etiqa_test/component/confirmation_dialog.dart';
 import 'package:etiqa_test/component/router.dart';
 import 'package:etiqa_test/model/todoModel.dart';
 import 'package:etiqa_test/viewModel/todo_view_model.dart';
@@ -107,6 +108,25 @@ class _TodoCardState extends State<TodoCard> {
             "todoDetail": widget.myTodo,
             "showDetail": true,
           });
+        },
+        onLongPress: () async {
+          await showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return ConfirmationDialog(
+                  title: "Alert",
+                  message:
+                      'Are you sure you want to delete "${widget.myTodo.title}" To-Do list?',
+                  onPressConfirm: () async {
+                    bool isCompleted = (await viewModel
+                        .deleteTodoList(widget.myTodo.id) as dynamic);
+
+                    if (isCompleted != null && isCompleted) {
+                      Navigator.of(context).pop();
+                    }
+                  },
+                );
+              });
         },
         child: Container(
           decoration: BoxDecoration(

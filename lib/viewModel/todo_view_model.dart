@@ -102,6 +102,24 @@ class TodoViewModel extends ChangeNotifier {
     }
   }
 
+  Future<bool> deleteTodoList(String id) async {
+    int index =
+        todoListNotifier.value.indexWhere((element) => element.id == id);
+    todoListNotifier.value.removeAt(index);
+
+    await storage.ready;
+    await storage.setItem(
+        "todoListKey",
+        todoListNotifier.value
+            .asMap()
+            .map((key, value) => MapEntry(key, value.toJson()))
+            .values
+            .toList());
+
+    todoListNotifier.notifyListeners();
+    return true;
+  }
+
   void updateTodoStatus(String id, bool status) {
     int index =
         todoListNotifier.value.indexWhere((element) => element.id == id);
