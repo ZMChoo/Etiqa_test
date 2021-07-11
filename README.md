@@ -1,6 +1,6 @@
-# etiqa_test
+# Flutter_Notes
 
-This is an Etiqa test project by using Flutter.
+This application is developed by using Flutter.
 
 ## Environment
 

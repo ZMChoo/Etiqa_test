@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.etiqa_test">
    <application
-        android:label="etiqa_test"
+        android:label="Flutter Notes"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -32,10 +32,14 @@ dependencies:
   animations: ^2.0.1
   localstorage: ^4.0.0+1
   intl: ^0.17.0
+  flutter_launcher_name: ^0.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+flutter_launcher_name:
+  name: "Flutter Notes"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
