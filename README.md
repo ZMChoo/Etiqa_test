@@ -1,16 +1,18 @@
 # etiqa_test
 
-A new Flutter project.
+This is an Etiqa test project by using Flutter.
 
-## Getting Started
+## Environment
 
-This project is a starting point for a Flutter application.
+This project is using Flutter SDK version 2.0.6.
 
-A few resources to get you started if this is your first Flutter project:
+You can download the sdk version from this [link](https://flutter.dev/docs/development/tools/sdk/releases).
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## What this app can do
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Add a new To-Do card
+- Update your existing To-Do card
+- Delete your existing To-Do card 
+- Can change your To-Do card status when done
+
+You can delete your exisiting To-Do card by long pressing on the card.
